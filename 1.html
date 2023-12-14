@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>1</title>
+    <style type="text/css">
+    	.bg{
+    		background: red;
+    	}
+    </style>
+    <script src="jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script type="text/javascript">
+
+    	$(function(){
+	    	// click_cur = Cookies.get('click_cur');//从cookie取
+	    	var click_cur = localStorage.getItem('click_cur');
+	    	$("H1").each(function(){
+	    		if($(this).attr('data-index')==click_cur){
+	    			$(this).addClass('bg')
+	    		}
+	    	})
+    	})
+    </script>
+    <script type="text/javascript">
+    	function run(obj){
+    		that = obj;$(that).addClass('bg');
+    		// Cookies.set('click_cur',$(that).attr('data-index'));//存入cookie
+			localStorage.setItem('click_cur',$(that).attr('data-index'));//localStorage
+    		window.location.href ='2.html';
+    	}
+    </script>
+</head>
+<body>
+	<h1 data-index='1' onclick="run(this)">测试测试测试测试测试测试测试测试测试测试测试测试 </h1>
+	<h1 data-index='2' onclick="run(this)">测试测试测试测试测试测试测试测试测试测试测试测试 </h1>
+	<h1 data-index='3' onclick="run(this)">测试测试测试测试测试测试测试测试测试测试测试测试 </h1>
+	<h1 data-index='4' onclick="run(this)">测试测试测试测试测试测试测试测试测试测试测试测试 </h1>
+	<h1 data-index='5' onclick="run(this)">测试测试测试测试测试测试测试测试测试测试测试测试 </h1>
+	<h1 data-index='6' onclick="run(this)">测试测试测试测试测试测试测试测试测试测试测试测试 </h1>
+	<h1 data-index='7' onclick="run(this)">测试测试测试测试测试测试测试测试测试测试测试测试 </h1>
+</body>
+</html>
